@@ -3,11 +3,11 @@
 # [Creation and validation of a prototype of an AI-based software robot for automatic modelling, planning and optimization of production processes based on artificial intelligence in Aktaprint OÜ.]
 
 ## Summary
-| Company Name | [Company](https://website.link) |
+| Company Name | [Aktaprint OÜ](https://website.link) |
 | :--- | :--- |
-| Development Team Lead Name | [Dr. John Smith](https://profile.link) |
-| Development Team Lead E-mail | [email@example.com](mailto:email@example.com) |
-| Duration of the Demonstration Project | month/year-month/year |
+| Development Team Lead Name | [Tarmo Kadak](https://profile.link) |
+| Development Team Lead E-mail | [tarmo.kadak@taltech.ee](mailto:email@example.com) |
+| Duration of the Demonstration Project | 04/2024-12/2024
 | Final Report | [LÕPPARUANNE,101224.pdf](https://github.com/user-attachments/files/18085693/LOPPARUANNE.101224.pdf)
  |
 
