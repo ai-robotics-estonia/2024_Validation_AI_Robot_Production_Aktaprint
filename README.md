@@ -1,6 +1,6 @@
 *This is a template repository for this organization. Start by replacing the placeholder for the project name with its actual title.*
 
-# [Demonstration Project title]
+# [Creation and validation of a prototype of an AI-based software robot for automatic modelling, planning and optimization of production processes based on artificial intelligence in Aktaprint OÜ.]
 
 ## Summary
 | Company Name | [Company](https://website.link) |
