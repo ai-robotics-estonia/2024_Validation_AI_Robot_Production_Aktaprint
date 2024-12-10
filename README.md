@@ -8,7 +8,8 @@
 | Development Team Lead Name | [Dr. John Smith](https://profile.link) |
 | Development Team Lead E-mail | [email@example.com](mailto:email@example.com) |
 | Duration of the Demonstration Project | month/year-month/year |
-| Final Report | [Example_report.pdf](https://github.com/ai-robotics-estonia/_project_template_/files/13800685/IC-One-Page-Project-Status-Report-10673_PDF.pdf) |
+| Final Report | [LÕPPARUANNE,101224.pdf](https://github.com/user-attachments/files/18085693/LOPPARUANNE.101224.pdf)
+ |
 
 ### Each project has an alternative for documentation
 1. Fill in the [description](#description) directly in the README below *OR*;
