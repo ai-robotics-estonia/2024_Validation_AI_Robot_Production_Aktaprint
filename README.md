@@ -90,9 +90,9 @@ MCTS helps to limit the amount of calculated bows, but the mentioned steps to ex
 
 
 Comparison of three algorithms for the following sets of input pages (run 10000, color 1):
-1)	105*148,
-2)	302*216, 302*216, 302*216,302*216
-3)	105*148;74*105
+1)	105x148,
+2)	302x216, 302x216, 302x216,302x216
+3)	105x148;74x105
 4)	148*210;148*210; 148*210;148*210
 5)	302*216; 150*216; 302*432; 150*432
 6)	302*216, 302*216, 302*216, 302*216, 302*216, 302*216
