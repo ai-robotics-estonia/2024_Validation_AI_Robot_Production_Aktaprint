@@ -138,7 +138,6 @@ Amounts of input sheets (run 10,000, color 1):
 Figure 4.
 
 The last three columns in Figure 4 highlight the price differences between the minimum-maximum price found, respectively, and in the case of MCTS, also between the minimum and default price. In the case of the MCTS algorithm, it can be seen that the minimum price found with the randomness component did not differ by more than ~5% from the price without the randomness component, and in three cases the price found by default is equal to the lowest price found based on randomness. The given figure also shows that when filling out the SA model, the difference between the minimum and maximum price can be quite large, which is why it is necessary to fill in the model repeatedly to find the most favourable solution.
-.
 
 ### Technical Architecture
 *Please describe the technical architecture (e.g, presented graphically, where the technical solution integration with the existing system can also be seen).*
@@ -149,7 +148,6 @@ Figure 5 of the architecture of the technical solution. Data tables are marked i
 
 
 ![image](https://github.com/user-attachments/assets/8aa73f17-4562-49ae-bb39-6ec0d4eeca3e)
-![backend-architecture](https://github.com/ai-robotics-estonia/_project_template_/assets/15941300/6d405b21-3454-4bd3-9de5-d4daad7ac5b7)
 
 
 ### User Interface 
@@ -164,13 +162,24 @@ Figure 6.
 ### Future Potential of the Technical Solution
 *Please describe the potential areas for future use of the technical solution.*
 - [The solution can most likely be used in the production optimization and planning software of companies with a production schedule and production structure similar to a printing company, offering "custom made" solutions.],
-- [The artificial intelligence solution has application potential in other production areas, where optimization is important, the number of possible solutions is large, and the solution space can be represented as a tree.],
-- etc... .
+- [The artificial intelligence solution has application potential in other production areas, where optimization is important, the number of possible solutions is large, and the solution space can be represented as a tree.].
 
 ### Lessons Learned
 *Please describe the lessons learned (i.e. assessment whether the technological solution actually solved the initial challenge).*
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lessons learned about data and databases: Decisions, including those made by software, must be based on data. In order to make good decisions (for example, choosing the best way to fulfill an order), you need to use high-quality data. Unfortunately, the data quality in the existing databases may not be as good as it could be, and thus, when planning software development projects, the possibility that the data quality must be improved on an ongoing basis must be taken into account so that these data can be used by the software being developed. 
+
+Creators of new registry-based systems should start from the fact that the data managed in them will sooner or later be used in decision-making processes, and therefore data quality assurance must be dealt with during the entire development process (just as security, performance, legality and ethics issues must be dealt with during the entire development), because there is a lot of prevention of problems cheaper than solving them afterwards.
+
+The technical lesson is that the popular data management system (database system) MySQL historically could not enforce foreign key constraints. Although this option was added later, many legacy MySQL databases leave these keys undefined. This is not only a possible risk of violation of data quality, but also makes it more difficult for new parties to understand the data, because the database does not have information presented in a published form about which data objects are related to each other in which way. This information is not available electronically from the system, but is in the minds of the database creators (it is also good if they are available to ask for information).
+
+The lack of documentation of the software (including the database) becomes a problem at the latest when it is necessary to introduce the software to someone so that the other person starts to deal with the maintenance or further development of the software.
+
+The artificial intelligence-based solution is suitable for optimizing the bow assembly process. Both simulated annealing and Monte Carlo tree search algorithms give good results. 
+
+The complexity of manufacturing and business processes makes building a general AI solution labour-intensive. Finding bottlenecks in the process with a complex search space and optimizing their performance with heuristic AI algorithms seems a more realistic alternative. 
+
+The existence of an optimisable price function enables verification, which, unlike the training and test data of classical supervised learning, uses the guaranteed optimal solutions found by the brute force algorithm as a reference base.
 
 # Custom agreement with the AIRE team
 *If you have a unique project or specific requirements that don't fit neatly into the Docker file or description template options, we welcome custom agreements with our AIRE team. This option allows flexibility in collaborating with us to ensure your project's needs are met effectively.*
