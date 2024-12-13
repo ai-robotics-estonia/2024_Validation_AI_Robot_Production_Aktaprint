@@ -80,7 +80,65 @@ MCTS helps to limit the amount of calculated bows, but the mentioned steps to ex
 ### Technological Results
 *Please describe the results of testing and validating the technological solution.*
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+•	A more detailed comparison of the three post-processing solutions (print bow generation and price calculation) produced the results below. Let's call these solutions Brute Force, which generates and calculates all possible variations of the bows, and AI-centric Monte Carlo Tree Search (MCTS) and Simulated Annealing (SA), where the search space is optimized. 
+• The Brute Force solution gives the best result when the input is small (up to 6 input pages), because it always finds the most favorable solution (Figure 1, number of input pages up to 6). For larger input, the model becomes unreasonably slow.
+• An important advantage of MCTS and SA is their speed. Both models may or may not always find the most favorable global solution. However, the tests below show that the difference from the global minimum may not be large.
+• In the SA algorithm, the degree of randomness is higher, i.e. to find the most favorable solution, it would be reasonable to execute the algorithm several times and then choose the most favorable solution.
+
+
+
+
+
+Comparison of three algorithms for the following sets of input pages (run 10000, color 1):
+1)	105*148
+2)	302*216; 302*216; 302*216; 302*216
+3)	105*148; 74*105
+4)	148*210; 148*210; 148*210; 148*210
+5)	302*216; 150*216; 302*432; 150*432
+6)	302*216, 302*216, 302*216, 302*216, 302*216, 302*216
+7)	74*105; 74*105; 74*105; 74*105
+8)	210*297; 148*210; 297*420; 594*420; 105*148
+9)	148*210; 148*210; 148*210; 148*210; 148*210; 148*210
+10)	74*105; 210*297; 210*297; 210*297; 210*297
+11)	105*148; 105*148; 105*148; 297*420; 297*420; 297*420
+12)	302*216, 150*216, 302*432, 150*432, 150*108
+
+![image](https://github.com/user-attachments/assets/930c66fa-4562-4809-862a-5241429e01d1)
+
+Figure 1.
+
+If the first six variations of the input page sets, where there are fewer input pages or the page sizes are larger, all 3 algorithms are calculated quite quickly. The differences are large from the seventh set of input sheets, where 1) there are more sheets in the set and 2) they are smaller in size or 3) they are of different sizes. For sets of input sheets 7 - 12, MCTS and SA take a maximum of twenty seconds, while the Brute Force model takes up to two hours to find a solution (Figure 1).
+
+The speed of AI-based algorithms comes from the fact that they do not have to calculate the entire set of solutions to find the most optimal solution. Figure 2 shows the range of input bow placement variations computed by the Brute Force model and compares it to the set of solutions computed by the MCTS and SA models. If the input is only one sheet measuring 105*148 mm, it is possible to create 74 bow layout variations. If there are 5 input pages and they are all different sizes, the number of possible variations is 9.4 million. Figure 2 helps explain why the Brute Force algorithm becomes slow after the sixth input - the number of variations it calculates increases exponentially the more input pages there are.
+
+  ![image](https://github.com/user-attachments/assets/e72b23be-dd53-49cc-be65-6223786e6161)
+
+  Figure 2.
+
+Compared to the most favourable prices found, the prices found by both MCTS and SA remained within the 5% margin of error, that is, the most favourable price found was the same as the price of the Brute Force solution or did not differ from it by more than 5% (Figure 3).
+
+  ![image](https://github.com/user-attachments/assets/21820b82-de12-4d16-858b-5f1f66c9d331)
+
+ Figure 3.
+
+Testing the price differences separately in a comparison of the three models for 50 different combinations of input pages, where there was no more than a maximum of 3 input pages, it turned out that both MCTS and SA reached the same solution as the Brute Force model (or stayed within the 5% error rate) 96 % case. For MCTS, all prices obtained were within 5% error. In the case of SA, there were 2 cases out of 50 where the price difference was over 5%. Comparing the price averages, both AI-based algorithms were within 5% error.
+
+The comparison between the MCTS and SA models for a set of six input pages gave a slight advantage to the MCTS model, which found a slightly better solution (marked in green in Figure 4). In this case, randomness has also been introduced into the MCTS model, and for each set of input sheets, both models were executed 5 times, tabulating the minimum and maximum prices obtained. The default column refers to the situation where the MCTS model was run without the randomness component.
+
+Amounts of input sheets (run 10,000, color 1):
+1) 210*297, 148*210, 297*420, 594*420, 105*148, 74*105
+2) 210*297, 148*210, 105*148, 74*105, 52*74, 37*52
+3) 302*216, 150*216, 302*432, 150*432, 150*108, 216*108
+4) 302*216, 150*216, 148*210, 302*216, 150*216, 148*210
+5) 52*74, 74*105, 37*52, 52*74, 74*105, 37*52
+6) 302*216, 302*548, 74*105, 148*210, 105*148, 150*108
+
+![image](https://github.com/user-attachments/assets/acf6d434-2c2e-4d3f-8ecf-c94be6520c29)
+
+Figure 4.
+
+The last three columns in Figure 4 highlight the price differences between the minimum-maximum price found, respectively, and in the case of MCTS, also between the minimum and default price. In the case of the MCTS algorithm, it can be seen that the minimum price found with the randomness component did not differ by more than ~5% from the price without the randomness component, and in three cases the price found by default is equal to the lowest price found based on randomness. The given figure also shows that when filling out the SA model, the difference between the minimum and maximum price can be quite large, which is why it is necessary to fill in the model repeatedly to find the most favourable solution.
+.
 
 ### Technical Architecture
 *Please describe the technical architecture (e.g, presented graphically, where the technical solution integration with the existing system can also be seen).*
@@ -90,19 +148,23 @@ Figure 5 of the architecture of the technical solution. Data tables are marked i
 
 
 
-![![image](https://github.com/user-attachments/assets/8aa73f17-4562-49ae-bb39-6ec0d4eeca3e)]
+![image](https://github.com/user-attachments/assets/8aa73f17-4562-49ae-bb39-6ec0d4eeca3e)
 ![backend-architecture](https://github.com/ai-robotics-estonia/_project_template_/assets/15941300/6d405b21-3454-4bd3-9de5-d4daad7ac5b7)
 
 
 ### User Interface 
 *Please describe the details about the user interface(i.e, how does the client 'see' the technical result, whether a separate user interface was developed, command line script was developed, was it validated as an experiment, can the results be seen in ERP or are they integrated into work process)*
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Aktaprint sees the user interface of the made prototype as in the figure. The user interface displays the parameters of the customer order to be entered, the parameters of the company's machines; generated order workflows, workflow tasks and costs (Figure 6).
+
+![image](https://github.com/user-attachments/assets/7e0d4b14-0a8b-45d1-8996-a3abc1d091a4)
+
+Figure 6.
 
 ### Future Potential of the Technical Solution
 *Please describe the potential areas for future use of the technical solution.*
-- [Use case 1],
-- [Use case 2],
+- [The solution can most likely be used in the production optimization and planning software of companies with a production schedule and production structure similar to a printing company, offering "custom made" solutions.],
+- [The artificial intelligence solution has application potential in other production areas, where optimization is important, the number of possible solutions is large, and the solution space can be represented as a tree.],
 - etc... .
 
 ### Lessons Learned
