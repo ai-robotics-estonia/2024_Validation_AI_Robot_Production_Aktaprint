@@ -28,35 +28,35 @@ In the framework of this project, only the solution for creating an optimal prin
 *Please describe challenge addressed (i.e, whether and how the initial challenge was changed during the project, for which investment the demonstration project was provided).*
 
 The database challenges and activities included:
-• Identifying the data sources used and understanding the meaning of the data in them. The challenge was the lack of database documentation, therefore it was necessary to interview the creators of the database.
-• Creating a copy of the company's operational database and simplifying it. Simplification meant removing unnecessary tables and columns from the database for this prototype.
-• Improving the design quality of the created copy and, in turn, improving data quality, for example by changing column types and enforcing additional restrictions on data at the database level. The biggest challenge was transferring the data to the new structures. In the process, it was also necessary to convert the data, because numerical data were often in textual form in the source database. The challenge was that those filling the database with data had used different formats when presenting this data, and thus had to deal with extracting data values from texts using regular expressions. The multitude of formats meant that not all conversions could be fully automated. Creators of a new version of the company's database must take into account that it is also necessary to make manual conversions, and all automatically made conversions must be reviewed.
-• The prototype to be created needed data about the machines and their characteristics. Among these data were some that were not previously registered in the database. Therefore, it was necessary to design a new sub-part of the database for storing data on machines and their properties.
-• The created prototype generates a response based on the input data received from the customer's order. Thus, a database was designed where customer order data is entered.
-• The communication between the different components of the created prototype was realized in an asynchronous way, which means that one part transmits a task to another without interrupting its work to wait for a response. A database was used for asynchronous data exchange, where one component stores the request in the created table, and the other component stores the response there after the end of the work.
+- Identifying the data sources used and understanding the meaning of the data in them. The challenge was the lack of database documentation, therefore it was necessary to interview the creators of the database.
+- Creating a copy of the company's operational database and simplifying it. Simplification meant removing unnecessary tables and columns from the database for this prototype.
+- Improving the design quality of the created copy and, in turn, improving data quality, for example by changing column types and enforcing additional restrictions on data at the database level. The biggest challenge was transferring the data to the new structures. In the process, it was also necessary to convert the data, because numerical data were often in textual form in the source database. The challenge was that those filling the database with data had used different formats when presenting this data, and thus had to deal with extracting data values from texts using regular expressions. The multitude of formats meant that not all conversions could be fully automated. Creators of a new version of the company's database must take into account that it is also necessary to make manual conversions, and all automatically made conversions must be reviewed.
+- The prototype to be created needed data about the machines and their characteristics. Among these data were some that were not previously registered in the database. Therefore, it was necessary to design a new sub-part of the database for storing data on machines and their properties.
+- The created prototype generates a response based on the input data received from the customer's order. Thus, a database was designed where customer order data is entered.
+- The communication between the different components of the created prototype was realized in an asynchronous way, which means that one part transmits a task to another without interrupting its work to wait for a response. A database was used for asynchronous data exchange, where one component stores the request in the created table, and the other component stores the response there after the end of the work.
 
 The challenges and activities related to the development of artificial intelligence were as follows:
-• Selecting the staple binder production process as the focus of the project.
-• Choosing a back-to-front approach to problem analysis. The generation of the process starts with the finished order, and by generating the process, we try to reach the beginning of the production process - empty bows.
-• Identification and understanding of bow assembly/pre-treatment as a production process bottleneck during interviews.
-• By Brute Force, creating an algorithm that is guaranteed to find the optimal (cheapest) bow assembly solution and is the basis for the verification of artificial intelligence algorithms. A brute-force algorithm is based on recursively applying elementary operations to input pages to produce printable output arcs.
-• Realization of the cost function of bow assembly/pretreatment to evaluate the goodness of the solution.
-• Optimizing the performance of the Brute Force algorithm to enable practical use.
-• Implementation of two artificial intelligence algorithms:
-o Simulated Annealing
-o Monte Carlo Tree Search. This algorithm was not originally mentioned, but during the work it turned out that it fits well with the recursive bow assembly approach.
-• Verification of these AI algorithms based on the price function compared to a brute force algorithm. The gain in speed is astronomical for larger issues, the loss in price is acceptable.
-• Tuning of artificial intelligence algorithms.
-• Comparison of artificial intelligence algorithms. MCTS has a slight advantage.
-• Evaluation of the expansion possibilities of artificial intelligence algorithms. They are stronger on the MCTS algorithm, which can be extended with various pre-trained machine learning models to evaluate the goodness of the solution branch a’la AlphaZero.
+- Selecting the staple binder production process as the focus of the project.
+- Choosing a back-to-front approach to problem analysis. The generation of the process starts with the finished order, and by generating the process, we try to reach the beginning of the production process - empty bows.
+- Identification and understanding of bow assembly/pre-treatment as a production process bottleneck during interviews.
+- By Brute Force, creating an algorithm that is guaranteed to find the optimal (cheapest) bow assembly solution and is the basis for the verification of artificial intelligence algorithms. A brute-force algorithm is based on recursively applying elementary operations to input pages to produce printable output arcs.
+- Realization of the cost function of bow assembly/pretreatment to evaluate the goodness of the solution.
+- Optimizing the performance of the Brute Force algorithm to enable practical use.
+- Implementation of two artificial intelligence algorithms:
+  - Simulated Annealing
+  - Monte Carlo Tree Search. This algorithm was not originally mentioned, but during the work it turned out that it fits well with the recursive bow assembly approach.
+- Verification of these AI algorithms based on the price function compared to a brute force algorithm. The gain in speed is astronomical for larger issues, the loss in price is acceptable.
+- Tuning of artificial intelligence algorithms.
+- Comparison of artificial intelligence algorithms. MCTS has a slight advantage.
+- Evaluation of the expansion possibilities of artificial intelligence algorithms. They are stronger on the MCTS algorithm, which can be extended with various pre-trained machine learning models to evaluate the goodness of the solution branch a’la AlphaZero.
 
 ### Data Sources
 *Please describe which data was used for the technological solution.*  
-•	Data from the company's operational data database about historical orders and the operations performed to fulfill them. Based on this data, it can be checked whether the prototype being created would produce the same result for existing orders as a human expert would have achieved for existing orders.
-• Information about the machines used by the company. Some of these data were also in the company's operational data database, but it turned out to be necessary to transform these data structures and collect additional data.
-• Data on the papers used for printing and their properties (including price). This data also came from the company's operational data database.
-• Examples of optimal manufacturing process models from industry experts for training and test data. 
-• The rule for evaluating the optimality of the production process model.
+- Data from the company's operational data database about historical orders and the operations performed to fulfill them. Based on this data, it can be checked whether the prototype being created would produce the same result for existing orders as a human expert would have achieved for existing orders.
+- Information about the machines used by the company. Some of these data were also in the company's operational data database, but it turned out to be necessary to transform these data structures and collect additional data.
+- Data on the papers used for printing and their properties (including price). This data also came from the company's operational data database.
+- Examples of optimal manufacturing process models from industry experts for training and test data. 
+- The rule for evaluating the optimality of the production process model.
 
 ### AI Technologies
 *Please describe and justify the use of selected AI technologies.*
@@ -161,8 +161,8 @@ Figure 6.
 
 ### Future Potential of the Technical Solution
 *Please describe the potential areas for future use of the technical solution.*
-- [The solution can most likely be used in the production optimization and planning software of companies with a production schedule and production structure similar to a printing company, offering "custom made" solutions.],
-- [The artificial intelligence solution has application potential in other production areas, where optimization is important, the number of possible solutions is large, and the solution space can be represented as a tree.].
+- The solution can most likely be used in the production optimization and planning software of companies with a production schedule and production structure similar to a printing company, offering "custom made" solutions,
+- The artificial intelligence solution has application potential in other production areas, where optimization is important, the number of possible solutions is large, and the solution space can be represented as a tree.
 
 ### Lessons Learned
 *Please describe the lessons learned (i.e. assessment whether the technological solution actually solved the initial challenge).*
