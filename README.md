@@ -8,8 +8,8 @@
 | Development Team Lead Name | [Tarmo Kadak](https://profile.link) |
 | Development Team Lead E-mail | [tarmo.kadak@taltech.ee](mailto:email@example.com) |
 | Duration of the Demonstration Project | 04/2024-12/2024
-| Final Report | [LÕPPARUANNE,101224.pdf](https://github.com/user-attachments/files/18085693/LOPPARUANNE.101224.pdf)
- |
+| Final Report | [LÕPPARUANNE,101224.pdf](https://github.com/user-attachments/files/18128024/LOPPARUANNE.101224.pdf)
+
 
 ### Each project has an alternative for documentation
 1. Fill in the [description](#description) directly in the README below *OR*;
@@ -90,18 +90,18 @@ MCTS helps to limit the amount of calculated bows, but the mentioned steps to ex
 
 
 Comparison of three algorithms for the following sets of input pages (run 10000, color 1):
-1)	105x148,
-2)	302x216, 302x216, 302x216,302x216
-3)	105x148;74x105
-4)	148*210;148*210; 148*210;148*210
-5)	302*216; 150*216; 302*432; 150*432
-6)	302*216, 302*216, 302*216, 302*216, 302*216, 302*216
-7)	74*105; 74*105; 74*105; 74*105
-8)	210*297; 148*210; 297*420; 594*420; 105*148
-9)	148*210; 148*210; 148*210; 148*210; 148*210; 148*210
-10)	74*105; 210*297; 210*297; 210*297; 210*297
-11)	105*148; 105*148; 105*148; 297*420; 297*420; 297*420
-12)	302*216, 150*216, 302*432, 150*432, 150*108
+1)	105x148
+2)	302x216; 302x216; 302x216;302x216
+3)	105x148; 74x105
+4)	148x210;148x210; 148x210;148x210
+5)	302x216; 150x216; 302x432; 150x432
+6)	302x216; 302x216; 302x216; 302x216, 302x216; 302x216
+7)	74x105; 74x105; 74x105; 74x105
+8)	210x297; 148x210; 297x420; 594x420; 105x148
+9)	148x210; 148x210; 148x210; 148x210; 148x210; 148x*210
+10)	74x105; 210x297; 210x297; 210x297; 210x297
+11)	105x148; 105x148; 105x148; 297x420; 297x420; 297x420
+12)	302x216, 150x216, 302x432, 150x432, 150x108
 
 ![image](https://github.com/user-attachments/assets/930c66fa-4562-4809-862a-5241429e01d1)
 
@@ -126,12 +126,12 @@ Testing the price differences separately in a comparison of the three models for
 The comparison between the MCTS and SA models for a set of six input pages gave a slight advantage to the MCTS model, which found a slightly better solution (marked in green in Figure 4). In this case, randomness has also been introduced into the MCTS model, and for each set of input sheets, both models were executed 5 times, tabulating the minimum and maximum prices obtained. The default column refers to the situation where the MCTS model was run without the randomness component.
 
 Amounts of input sheets (run 10,000, color 1):
-1) 210*297, 148*210, 297*420, 594*420, 105*148, 74*105
-2) 210*297, 148*210, 105*148, 74*105, 52*74, 37*52
-3) 302*216, 150*216, 302*432, 150*432, 150*108, 216*108
-4) 302*216, 150*216, 148*210, 302*216, 150*216, 148*210
-5) 52*74, 74*105, 37*52, 52*74, 74*105, 37*52
-6) 302*216, 302*548, 74*105, 148*210, 105*148, 150*108
+1) 210x297, 148x210, 297x420, 594x420, 105x148, 74x105
+2) 210x297, 148x210, 105x148, 74x105, 52x74, 37x52
+3) 302x216, 150x216, 302x432, 150x432, 150x108, 216x108
+4) 302x216, 150x216, 148x210, 302x216, 150x216, 148x210
+5) 52x74, 74x105, 37x52, 52x74, 74x105, 37x52
+6) 302x216, 302x548, 74x105, 148x210, 105x148, 150x108
 
 ![image](https://github.com/user-attachments/assets/acf6d434-2c2e-4d3f-8ecf-c94be6520c29)
 
