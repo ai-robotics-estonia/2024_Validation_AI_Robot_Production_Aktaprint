@@ -80,17 +80,17 @@ MCTS helps to limit the amount of calculated bows, but the mentioned steps to ex
 ### Technological Results
 *Please describe the results of testing and validating the technological solution.*
 
-•	A more detailed comparison of the three post-processing solutions (print bow generation and price calculation) produced the results below. Let's call these solutions Brute Force, which generates and calculates all possible variations of the bows, and AI-centric Monte Carlo Tree Search (MCTS) and Simulated Annealing (SA), where the search space is optimized. 
-• The Brute Force solution gives the best result when the input is small (up to 6 input pages), because it always finds the most favorable solution (Figure 1, number of input pages up to 6). For larger input, the model becomes unreasonably slow.
-• An important advantage of MCTS and SA is their speed. Both models may or may not always find the most favorable global solution. However, the tests below show that the difference from the global minimum may not be large.
-• In the SA algorithm, the degree of randomness is higher, i.e. to find the most favorable solution, it would be reasonable to execute the algorithm several times and then choose the most favorable solution.
+-	A more detailed comparison of the three post-processing solutions (print bow generation and price calculation) produced the results below. Let's call these solutions Brute Force, which generates and calculates all possible variations of the bows, and AI-centric Monte Carlo Tree Search (MCTS) and Simulated Annealing (SA), where the search space is optimized. 
+- The Brute Force solution gives the best result when the input is small (up to 6 input pages), because it always finds the most favorable solution (Figure 1, number of input pages up to 6). For larger input, the model becomes unreasonably slow.
+- An important advantage of MCTS and SA is their speed. Both models may or may not always find the most favorable global solution. However, the tests below show that the difference from the global minimum may not be large.
+- In the SA algorithm, the degree of randomness is higher, i.e. to find the most favorable solution, it would be reasonable to execute the algorithm several times and then choose the most favorable solution.
 
 
 
 
 
 Comparison of three algorithms for the following sets of input pages (run 10000, color 1):
-1)	105*148
+  - 1)	105*148
 2)	302*216; 302*216; 302*216; 302*216
 3)	105*148; 74*105
 4)	148*210; 148*210; 148*210; 148*210
@@ -149,6 +149,7 @@ Figure 5 of the architecture of the technical solution. Data tables are marked i
 
 ![image](https://github.com/user-attachments/assets/8aa73f17-4562-49ae-bb39-6ec0d4eeca3e)
 
+Figure 5.
 
 ### User Interface 
 *Please describe the details about the user interface(i.e, how does the client 'see' the technical result, whether a separate user interface was developed, command line script was developed, was it validated as an experiment, can the results be seen in ERP or are they integrated into work process)*
@@ -167,19 +168,21 @@ Figure 6.
 ### Lessons Learned
 *Please describe the lessons learned (i.e. assessment whether the technological solution actually solved the initial challenge).*
 
-Lessons learned about data and databases: Decisions, including those made by software, must be based on data. In order to make good decisions (for example, choosing the best way to fulfill an order), you need to use high-quality data. Unfortunately, the data quality in the existing databases may not be as good as it could be, and thus, when planning software development projects, the possibility that the data quality must be improved on an ongoing basis must be taken into account so that these data can be used by the software being developed. 
+Lessons learned about data and databases: 
+- Decisions, including those made by software, must be based on data. In order to make good decisions (for example, choosing the best way to fulfill an order), you need to use high-quality data. Unfortunately, the data quality in the existing databases may not be as good as it could be, and thus, when planning software development projects, the possibility that the data quality must be improved on an ongoing basis must be taken into account so that these data can be used by the software being developed. 
 
-Creators of new registry-based systems should start from the fact that the data managed in them will sooner or later be used in decision-making processes, and therefore data quality assurance must be dealt with during the entire development process (just as security, performance, legality and ethics issues must be dealt with during the entire development), because there is a lot of prevention of problems cheaper than solving them afterwards.
+- Creators of new registry-based systems should start from the fact that the data managed in them will sooner or later be used in decision-making processes, and therefore data quality assurance must be dealt with during the entire development process (just as security, performance, legality and ethics issues must be dealt with during the entire development), because there is a lot of prevention of problems cheaper than solving them afterwards.
 
-The technical lesson is that the popular data management system (database system) MySQL historically could not enforce foreign key constraints. Although this option was added later, many legacy MySQL databases leave these keys undefined. This is not only a possible risk of violation of data quality, but also makes it more difficult for new parties to understand the data, because the database does not have information presented in a published form about which data objects are related to each other in which way. This information is not available electronically from the system, but is in the minds of the database creators (it is also good if they are available to ask for information).
+- The technical lesson is that the popular data management system (database system) MySQL historically could not enforce foreign key constraints. Although this option was added later, many legacy MySQL databases leave these keys undefined. This is not only a possible risk of violation of data quality, but also makes it more difficult for new parties to understand the data, because the database does not have information presented in a published form about which data objects are related to each other in which way. This information is not available electronically from the system, but is in the minds of the database creators (it is also good if they are available to ask for information).
 
-The lack of documentation of the software (including the database) becomes a problem at the latest when it is necessary to introduce the software to someone so that the other person starts to deal with the maintenance or further development of the software.
+- The lack of documentation of the software (including the database) becomes a problem at the latest when it is necessary to introduce the software to someone so that the other person starts to deal with the maintenance or further development of the software.
 
-The artificial intelligence-based solution is suitable for optimizing the bow assembly process. Both simulated annealing and Monte Carlo tree search algorithms give good results. 
+Lessons learned about artificial intelligence-based solution: 
+- The artificial intelligence-based solution is suitable for optimizing the bow assembly process. Both simulated annealing and Monte Carlo tree search algorithms give good results. 
 
-The complexity of manufacturing and business processes makes building a general AI solution labour-intensive. Finding bottlenecks in the process with a complex search space and optimizing their performance with heuristic AI algorithms seems a more realistic alternative. 
+- The complexity of manufacturing and business processes makes building a general AI solution labour-intensive. Finding bottlenecks in the process with a complex search space and optimizing their performance with heuristic AI algorithms seems a more realistic alternative. 
 
-The existence of an optimisable price function enables verification, which, unlike the training and test data of classical supervised learning, uses the guaranteed optimal solutions found by the brute force algorithm as a reference base.
+- The existence of an optimisable price function enables verification, which, unlike the training and test data of classical supervised learning, uses the guaranteed optimal solutions found by the brute force algorithm as a reference base.
 
 # Custom agreement with the AIRE team
 *If you have a unique project or specific requirements that don't fit neatly into the Docker file or description template options, we welcome custom agreements with our AIRE team. This option allows flexibility in collaborating with us to ensure your project's needs are met effectively.*
