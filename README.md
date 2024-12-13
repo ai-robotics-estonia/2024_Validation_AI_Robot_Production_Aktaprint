@@ -19,7 +19,9 @@
 ## Objectives of the Demonstration Project
 *Please describe your project objectives in detail.*
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The goal of the project was to create and validate an AI-based software robot prototype designed for the most effective modelling and optimization of the company's various products and production processes. Within the entire core process of the company, the created robot is most closely related to sales and production planning activities, but it also has an impact on other activities. 
+The task of the robot is to find a sufficiently good production process for a specific product/order throughout the entire order fulfilment period, starting from contacting the company with the customer's purchase request (including filling out the price offer (customer interface) form on the website), collecting the order requirements and ending with the production of the finished product that meets these requirements.
+In the framework of this project, only the solution for creating an optimal print production process was implemented, which is an important module of the unified software system for customer management and production management planned in the future. 
 
 ## Activities and Results of the Demonstration Project
 ### Challenge
