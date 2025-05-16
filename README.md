@@ -1,6 +1,6 @@
 *This is a template repository for this organization. Start by replacing the placeholder for the project name with its actual title.*
 
-# [Creation and validation of a prototype of an AI-based software robot for automatic modelling, planning and optimization of production processes based on artificial intelligence in Aktaprint OÜ.]
+# [Adjustment and validation of a prototype of an AI-based software robot for automatic modelling, planning and optimization of production processes based on artificial intelligence in Aktaprint OÜ.]
 
 ## Summary
 | Company Name | [Aktaprint OÜ](https://website.link) |
@@ -19,27 +19,28 @@
 ## Objectives of the Demonstration Project
 *Please describe your project objectives in detail.*
 
-The goal of the project was to create and validate an AI-based software robot prototype designed for the most effective modelling and optimization of the company's various products and production processes. Within the entire core process of the company, the created robot is most closely related to sales and production planning activities, but it also has an impact on other activities. 
-The task of the robot is to find a sufficiently good production process for a specific product/order throughout the entire order fulfilment period, starting from contacting the company with the customer's purchase request (including filling out the price offer (customer interface) form on the website), collecting the order requirements and ending with the production of the finished product that meets these requirements.
-In the framework of this project, only the solution for creating an optimal print production process was implemented, which is an important module of the unified software system for customer management and production management planned in the future. Manufacturing process modelling based on artificial intelligence (software robot) provides solutions that help increase the efficiency, accuracy and overall performance of the manufacturing processes required by our company.
+The objective of the project was to test and validate an AI-based prototype of a software robot designed for the effective modeling and optimization of various products and production processes within the company. Throughout the entire core process of the company, the created robot is most closely associated with sales and production planning activities, while also influencing other functions. 
+The robot’s task is to identify a sufficiently effective production process for a specific product or order over the entire order fulfillment period — from the moment a customer expresses purchase interest by contacting the company (including by filling out the price offer form on the website), to gathering order requirements, and culminating in the production of a finished product that meets those requirements. 
+Within the scope of this project, only the solution for establishing an optimal print production process was implemented, which is an important module of the unified software system for customer management and production management planned for the future. 
+Furthermore, AI-based (software robot-based) modeling of production processes offers solutions that help increase the efficiency, accuracy, and overall performance of the production processes required by our company. 
 
 ## Activities and Results of the Demonstration Project
 ### Challenge
 *Please describe challenge addressed (i.e, whether and how the initial challenge was changed during the project, for which investment the demonstration project was provided).*
 
 The database challenges and activities included:
-- Identifying the data sources used and understanding the meaning of the data in them. The challenge was the lack of database documentation, therefore it was necessary to interview the creators of the database.
-- Creating a copy of the company's operational database and simplifying it. Simplification meant removing unnecessary tables and columns from the database for this prototype.
-- Improving the design quality of the created copy and, in turn, improving data quality, for example by changing column types and enforcing additional restrictions on data at the database level. The biggest challenge was transferring the data to the new structures. In the process, it was also necessary to convert the data, because numerical data were often in textual form in the source database. The challenge was that those filling the database with data had used different formats when presenting this data, and thus had to deal with extracting data values from texts using regular expressions. The multitude of formats meant that not all conversions could be fully automated. Creators of a new version of the company's database must take into account that it is also necessary to make manual conversions, and all automatically made conversions must be reviewed.
-- The prototype to be created needed data about the machines and their characteristics. Among these data were some that were not previously registered in the database. Therefore, it was necessary to design a new sub-part of the database for storing data on machines and their properties.
-- The created prototype generates a response based on the input data received from the customer's order. Thus, a database was designed where customer order data is entered.
-- The communication between the different components of the created prototype was realized in an asynchronous way, which means that one part transmits a task to another without interrupting its work to wait for a response. A database was used for asynchronous data exchange, where one component stores the request in the created table, and the other component stores the response there after the end of the work.
+- Identification of the data sources and understanding the meaning of the data contained within them. A major challenge was the lack of database documentation, which required interviewing the database creators.
+- Creating a copy of the company’s operational database and simplifying it. For the purposes of this prototype, simplification meant removing unnecessary tables and columns from the database. 
+- Improving the design quality of the created copy, and consequently the data quality, by, for example, changing column types and enforcing additional data constraints at the database level. The greatest challenge was transferring the data into new structures. In the process, it was also necessary to convert data since in the source database numeric data were often stored in textual form. The challenge was that those entering data into the database used different formats, so it was necessary to extract data values from text using regular expressions. The variety of formats meant that not all conversions could be fully automated. The creators of the company’s new database version must take into account that manual conversions are also necessary, and all automatically performed conversions must be reviewed. 
+- The prototype required data on machines and their properties. Among these were also items that were not previously recorded in the database. Therefore, it was necessary to adjust a new database submodule for storing data on machines and their properties. 
+- The prototype generates a response based on the input data received from the customer’s order. Accordingly, a database was adjusted into which customer order data is entered.
+- The communication between the various components of the prototype was implemented asynchronously, meaning that one component sends a task to another without interrupting its own work to wait for a response. For asynchronous data exchange, a database was used where one component stores a query in a designated table and another component appends its response after the task is completed. 
 
 The challenges and activities related to the development of artificial intelligence were as follows:
-- Selecting the staple binder production process as the focus of the project.
-- Choosing a back-to-front approach to problem analysis. The generation of the process starts with the finished order, and by generating the process, we try to reach the beginning of the production process - empty bows.
-- Identification and understanding of bow assembly/pre-treatment as a production process bottleneck during interviews.
-- By Brute Force, creating an algorithm that is guaranteed to find the optimal (cheapest) bow assembly solution and is the basis for the verification of artificial intelligence algorithms. A brute-force algorithm is based on recursively applying elementary operations to input pages to produce printable output arcs.
+- Selection of the clambering production process as the project focus. 
+- Choosing a back-to-front approach for problem analysis. Process generation begins from a completed order, and while generating the process, we attempt to trace back to the beginning of the production process – down to the empty clamp assemblies.
+- Identification and understanding of clamp assembly/preprocessing as a bottleneck in the production process through interviews. 
+- Adjustment and validation of a brute-force algorithm that guarantees finding the optimal (i.e., most cost-effective) clamp assembly solution and serves as the baseline for verifying AI algorithms. The brute-force algorithm is based on applying recursive elementary operations to the input sheets to produce printable output clamps. 
 - Realization of the cost function of bow assembly/pretreatment to evaluate the goodness of the solution.
 - Optimizing the performance of the Brute Force algorithm to enable practical use.
 - Implementation of two artificial intelligence algorithms:
@@ -68,8 +69,8 @@ The challenges and activities related to the development of artificial intellige
 - Simulated annealing (SA) is a classic optimization algorithm and is recommended as a default solution to optimization problems by sources such as Algorithm Design Manual, S. Skiena. The algorithm is based on the iterative modification of the original random solution, where at the beginning of the process, transitions to solutions with a worse estimate are also likely (exploration of the solution space, avoiding getting stuck in the local optimum), but at the end of the process, such transitions are very unlikely (tuning the solution). Hence the analogy with the controlled lowering of the temperature during steel annealing.
 - Monte Carlo Tree Search (MCTS) is a heuristic optimization algorithm that searches the solution tree for the most optimal solutions. MCTS is used for playing board games (chess, go) and, due to its tree-based approach, is well suited for the analysis of the solution tree generated by the elementary operations of bow assembly. MCTS is extensible with various pre-trained machine learning models (neural networks) that optimize the search. For example, the AlphaZero algorithm using pre-trained deep neural networks is extremely successful at playing chess and go. There are four main steps in a simple algorithm:
   - The choice of a half-baked solution with still unexplored possibilities for further development.
-  - Choosing one such development.
-  - Development and evaluation (simulation using the Monte Carlo method) as the final solution for such further development.
+  - Choosing one such testing for further exploration.
+  - Refining and evaluating that testing as the final solution (using Monte Carlo simulation).
   - Back-comparison and completion of tree nodes with new information.
 
 The MCTS method has been adapted based on the special features of the bow assembly as follows:
@@ -169,13 +170,13 @@ Figure 6.
 *Please describe the lessons learned (i.e. assessment whether the technological solution actually solved the initial challenge).*
 
 Lessons learned about data and databases: 
-- Decisions, including those made by software, must be based on data. In order to make good decisions (for example, choosing the best way to fulfill an order), you need to use high-quality data. Unfortunately, the data quality in the existing databases may not be as good as it could be, and thus, when planning software development projects, the possibility that the data quality must be improved on an ongoing basis must be taken into account so that these data can be used by the software being developed. 
+- Decisions—and the software outcomes—must be based on data. To make good decisions (for example, selecting the best order fulfillment method), high-quality data must be used. Unfortunately, the quality of data in existing databases may not be as good as it could be, so when planning software projects, it is necessary to account for the need to continuously improve data quality so that the data can be effectively utilized by the software being created.
 
-- Creators of new registry-based systems should start from the fact that the data managed in them will sooner or later be used in decision-making processes, and therefore data quality assurance must be dealt with during the entire development process (just as security, performance, legality and ethics issues must be dealt with during the entire development), because there is a lot of prevention of problems cheaper than solving them afterwards.
+- The creators of new registry-based systems should start from the assumption that the managed data will eventually be used in decision-making processes; therefore, ensuring data quality must be addressed throughout the entire creation process (just as security, performance, legality, and ethical issues must be handled throughout the entire process), because preventing problems is much more cost-effective than solving them afterward.
 
-- The technical lesson is that the popular data management system (database system) MySQL historically could not enforce foreign key constraints. Although this option was added later, many legacy MySQL databases leave these keys undefined. This is not only a possible risk of violation of data quality, but also makes it more difficult for new parties to understand the data, because the database does not have information presented in a published form about which data objects are related to each other in which way. This information is not available electronically from the system, but is in the minds of the database creators (it is also good if they are available to ask for information).
+- A technical lesson is that in the popular database system MySQL, foreign key constraints were historically not enforced. Although this capability was added later, in many legacy MySQL databases these keys remain undefined. This not only poses a risk to data quality but also makes it more difficult for new parties to understand the data, as the database does not explicitly present information about how data objects are related. This information is not electronically available from the system but resides in the minds of the database creators (which is acceptable as long as they are available for inquiries). 
 
-- The lack of documentation of the software (including the database) becomes a problem at the latest when it is necessary to introduce the software to someone so that the other person starts to deal with the maintenance or further development of the software.
+- Lack of software (including database) documentation becomes problematic when the software must be presented to someone who will then take over its maintenance or further refinement. 
 
 Lessons learned about artificial intelligence-based solution: 
 - The artificial intelligence-based solution is suitable for optimizing the bow assembly process. Both simulated annealing and Monte Carlo tree search algorithms give good results. 
