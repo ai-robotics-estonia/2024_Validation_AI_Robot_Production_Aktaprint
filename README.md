@@ -1,6 +1,6 @@
 *This is a template repository for this organization. Start by replacing the placeholder for the project name with its actual title.*
 
-# [Adjustment and validation of a prototype of an AI-based software robot for automatic modelling, planning and optimization of production processes based on artificial intelligence in Aktaprint OÜ.]
+# Adjustment and validation of a prototype of an AI-based software robot for automatic modelling, planning and optimization of production processes based on artificial intelligence in Aktaprint OÜ
 
 ## Summary
 | Company Name | [Aktaprint OÜ](https://website.link) |
@@ -11,13 +11,8 @@
 | Final Report | [LÕPPARUANNE,101224.pdf](https://github.com/user-attachments/files/18128024/LOPPARUANNE.101224.pdf)
 
 
-### Each project has an alternative for documentation
-1. Fill in the [description](#description) directly in the README below *OR*;
-2. make a [custom agreement with the AIRE team](#custom-agreement-with-the-AIRE-team).
-
 # Description
 ## Objectives of the Demonstration Project
-*Please describe your project objectives in detail.*
 
 The objective of the project was to test and validate an AI-based prototype of a software robot designed for the effective modeling and optimization of various products and production processes within the company. Throughout the entire core process of the company, the created robot is most closely associated with sales and production planning activities, while also influencing other functions. 
 The robot’s task is to identify a sufficiently effective production process for a specific product or order over the entire order fulfillment period — from the moment a customer expresses purchase interest by contacting the company (including by filling out the price offer form on the website), to gathering order requirements, and culminating in the production of a finished product that meets those requirements. 
@@ -26,7 +21,6 @@ Furthermore, AI-based (software robot-based) modeling of production processes of
 
 ## Activities and Results of the Demonstration Project
 ### Challenge
-*Please describe challenge addressed (i.e, whether and how the initial challenge was changed during the project, for which investment the demonstration project was provided).*
 
 The database challenges and activities included:
 - Identification of the data sources and understanding the meaning of the data contained within them. A major challenge was the lack of database documentation, which required interviewing the database creators.
@@ -52,7 +46,6 @@ The challenges and activities related to the development of artificial intellige
 - Evaluation of the expansion possibilities of artificial intelligence algorithms. They are stronger on the MCTS algorithm, which can be extended with various pre-trained machine learning models to evaluate the goodness of the solution branch a’la AlphaZero.
 
 ### Data Sources
-*Please describe which data was used for the technological solution.*  
 - Data from the company's operational data database about historical orders and the operations performed to fulfill them. Based on this data, it can be checked whether the prototype being created would produce the same result for existing orders as a human expert would have achieved for existing orders.
 - Information about the machines used by the company. Some of these data were also in the company's operational data database, but it turned out to be necessary to transform these data structures and collect additional data.
 - Data on the papers used for printing and their properties (including price). This data also came from the company's operational data database.
@@ -60,7 +53,7 @@ The challenges and activities related to the development of artificial intellige
 - The rule for evaluating the optimality of the production process model.
 
 ### AI Technologies
-*Please describe and justify the use of selected AI technologies.*
+
 - We are dealing with an optimization problem where we are trying to minimize the cost of the process. A Brute Force algorithm is too slow, so heuristic optimization algorithms must be used. Optimized solutions are sets of bows assembled from input sheets. Elementary operations are used for assembly: 
   - Merging leaves into one bow.
   - Making multiple copies of the same page, resulting in a larger bow.
@@ -79,7 +72,6 @@ The MCTS method has been adapted based on the special features of the bow assemb
 MCTS helps to limit the amount of calculated bows, but the mentioned steps to expand this amount were still necessary. Bows generated in the upper layer of the tree were mostly more expensive and very similar in price compared to bows generated in the lower layers of the tree. Choosing the most favorable path in the upper layer of the tree was therefore a challenge for the MCTS method. Making the tree as flat as possible and excluding branches that were already searched to the end helped to ensure that the result found was as close as possible to the globally best price.
 
 ### Technological Results
-*Please describe the results of testing and validating the technological solution.*
 
 -	A more detailed comparison of the three post-processing solutions (print bow generation and price calculation) produced the results below. Let's call these solutions Brute Force, which generates and calculates all possible variations of the bows, and AI-centric Monte Carlo Tree Search (MCTS) and Simulated Annealing (SA), where the search space is optimized. 
 - The Brute Force solution gives the best result when the input is small (up to 6 input pages), because it always finds the most favorable solution (Figure 1, number of input pages up to 6). For larger input, the model becomes unreasonably slow.
@@ -141,7 +133,6 @@ Figure 4.
 The last three columns in Figure 4 highlight the price differences between the minimum-maximum price found, respectively, and in the case of MCTS, also between the minimum and default price. In the case of the MCTS algorithm, it can be seen that the minimum price found with the randomness component did not differ by more than ~5% from the price without the randomness component, and in three cases the price found by default is equal to the lowest price found based on randomness. The given figure also shows that when filling out the SA model, the difference between the minimum and maximum price can be quite large, which is why it is necessary to fill in the model repeatedly to find the most favourable solution.
 
 ### Technical Architecture
-*Please describe the technical architecture (e.g, presented graphically, where the technical solution integration with the existing system can also be seen).*
 
 Figure 5 of the architecture of the technical solution. Data tables are marked in blue, software components in red, data objects (inputs/outputs) in yellow.
 
@@ -162,12 +153,11 @@ Aktaprint sees the user interface of the made prototype as in the figure. The us
 Figure 6.
 
 ### Future Potential of the Technical Solution
-*Please describe the potential areas for future use of the technical solution.*
+
 - The solution can most likely be used in the production optimization and planning software of companies with a production schedule and production structure similar to a printing company, offering "custom made" solutions,
 - The artificial intelligence solution has application potential in other production areas, where optimization is important, the number of possible solutions is large, and the solution space can be represented as a tree.
 
 ### Lessons Learned
-*Please describe the lessons learned (i.e. assessment whether the technological solution actually solved the initial challenge).*
 
 Lessons learned about data and databases: 
 - Decisions—and the software outcomes—must be based on data. To make good decisions (for example, selecting the best order fulfillment method), high-quality data must be used. Unfortunately, the quality of data in existing databases may not be as good as it could be, so when planning software projects, it is necessary to account for the need to continuously improve data quality so that the data can be effectively utilized by the software being created.
@@ -185,7 +175,3 @@ Lessons learned about artificial intelligence-based solution:
 
 - The existence of an optimisable price function enables verification, which, unlike the training and test data of classical supervised learning, uses the guaranteed optimal solutions found by the brute force algorithm as a reference base.
 
-# Custom agreement with the AIRE team
-*If you have a unique project or specific requirements that don't fit neatly into the Docker file or description template options, we welcome custom agreements with our AIRE team. This option allows flexibility in collaborating with us to ensure your project's needs are met effectively.*
-
-*To explore this option, please contact our demonstration projects service manager via katre.eljas@taltech.ee with the subject line "Demonstration Project Custom Agreement Request - [Your Project Name]." In your email, briefly describe your project and your specific documentation or collaboration needs. Our team will promptly respond to initiate a conversation about tailoring a solution that aligns with your project goals.*
